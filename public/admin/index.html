@@ -13,13 +13,6 @@
     }
   })
 
-  // redirection après signup/login
-  identity.on('login', () => {
-    document.location.href = '/admin/'
-  })
-  identity.on('signup', () => {
-    document.location.href = '/admin/'
-  })
 </script>
 <body>
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
