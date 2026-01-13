@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin</title>
+</head>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  const identity = window.netlifyIdentity
+  identity.on('init', user => {
+    if (!user) {
+      identity.open('signup') // ou 'login' selon le cas
+    }
+  })
+
+  // redirection après signup/login
+  identity.on('login', () => {
+    document.location.href = '/admin/'
+  })
+  identity.on('signup', () => {
+    document.location.href = '/admin/'
+  })
+</script>
+<body>
+  <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+</body>
+</html>
