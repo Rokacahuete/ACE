@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && echo > dist/.nojekyll",
+
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "gh-pages -d dist"
