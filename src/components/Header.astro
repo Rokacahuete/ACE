@@ -2,7 +2,7 @@
 import logo from '../assets/Logo.png';
 ---
 
-<div class="container">
+<div class="container centered">
     <img class="logo" src={logo.src} alt="Logo">
 </div>
 
@@ -14,6 +14,20 @@ import logo from '../assets/Logo.png';
     }
     
     .logo {
-        margin: 10px;
+        margin: 20px;
+    }
+
+	.centered {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	@media (min-width: 768px) {
+        .container.centered {
+            display: block;
+            text-align: start;
+        }
     }
 </style>
