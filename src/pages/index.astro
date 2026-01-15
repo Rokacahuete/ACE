@@ -1,12 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Banner from '../assets/3125.jpg';
+import Section from '../components/Section.astro'
 ---
 
 <Layout>
 	<div class="banner-container">
 		<img class = "banner" src={Banner.src} alt="">
 	</div>
+	<Section title="Titre">
+		Texte
+	</Section>
 </Layout>
 
 <style>
