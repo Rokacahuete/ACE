@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Banner from '../assets/3125.jpg';
 ---
 
 <Layout>
-	<Welcome />
+	<div class="banner-container">
+		<img class = "banner" src={Banner.src} alt="">
+	</div>
 </Layout>
+
+<style>
+	.centered {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.banner-container {
+		margin: 20px auto;
+		width: 90%;
+	}
+
+	.banner {
+		width: 100%;
+		max-height: 50vh;
+		object-fit: cover;
+		object-position: center 59%;
+		border-radius: 20px;
+		border: 2px solid black;
+	}
+</style>
