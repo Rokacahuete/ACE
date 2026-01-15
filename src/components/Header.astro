@@ -4,6 +4,14 @@ import logo from '../assets/Logo.png';
 
 <div class="container centered">
     <img class="logo" src={logo.src} alt="Logo">
+    
+    <div class="buttons-container">
+        <button>Accueil</button>
+        <button>Services</button>
+        <button>À propos</button>
+        <button>Contact</button>
+        <button>Compte client</button>
+    </div>
 </div>
 
 <style>
@@ -23,6 +31,18 @@ import logo from '../assets/Logo.png';
 		text-align: center;
 		flex-direction: column;
 	}
+
+    .buttons-container {
+        text-align: end;
+    }
+
+    button {
+        width: 100px;
+        height: 60px;
+        background-color: rgb(15, 43, 71);
+        color: white;
+        border-radius: 10px;
+    }
 
 	@media (min-width: 768px) {
         .container.centered {
