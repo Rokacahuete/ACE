@@ -6,11 +6,11 @@ import logo from '../assets/logo.png';
     <img class="logo" src={logo.src} alt="Logo">
     
     <div class="buttons-container">
-        <button>Accueil</button>
-        <button>Services</button>
-        <button>À propos</button>
-        <button>Contact</button>
-        <button>Compte client</button>
+        <a href="/" class="button" role="button">Accueil</a>
+        <a href="/services" class="button" role="button">Services</a>
+        <a href="/" class="button" role="button">À propos</a>
+        <a href="/" class="button" role="button">Contact</a>
+        <a href="/" class="button" role="button">Compte client</a>
     </div>
 </div>
 
@@ -42,6 +42,20 @@ import logo from '../assets/logo.png';
         background-color: rgb(15, 43, 71);
         color: white;
         border-radius: 10px;
+    }
+
+    .button {
+        display: inline-flex;
+        width: 100px;
+        height: 60px;
+        background-color: rgb(15, 43, 71);
+        color: white;
+        border-radius: 10px;
+
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
     }
 
 	@media (min-width: 768px) {
