@@ -13,16 +13,16 @@ import Background from '../components/Background.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>ACE Transport</title>
 	</head>
-	<header>
-		<Header />
-	</header>
 	<body>
+		<header>
+			<Header />
+		</header>
 		<Background />
 		<slot />
+		<footer>
+			<Footer />
+		</footer>
 	</body>
-	<footer>
-		<Footer />
-	</footer>
 </html>
 
 <style>

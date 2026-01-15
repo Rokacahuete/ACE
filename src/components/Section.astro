@@ -2,20 +2,10 @@
 const { title } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>ACE Transport</title>
-	</head>
-    <div class="container centered">
-		<h1>{title}</h1>
-        <slot />
-    </body>
-</html>
+<div class="container centered">
+	<h1>{title}</h1>
+	<slot />
+</div>
 
 <style>
 	.centered {
