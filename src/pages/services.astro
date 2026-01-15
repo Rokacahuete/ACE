@@ -1,7 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+
+import logistique from '../assets/Logistique-1.jpg';
+import configuration from '../assets/Assemblage.jpg';
+import livraison from '../assets/IMG_5100.jpg';
+import installation from '../assets/IMG_0490.jpeg';
 ---
 
 <Layout>
-
+    <Section title="Logistique">
+        <img src={logistique.src} alt="">
+        Entreposage sécurisé des produits dans un entrepot de plus de 20 000m²
+    </Section>
+    <Section title="Configuration">
+        <img src={configuration.src} alt="">
+        Montage et configuration des machines, pour qu'elles soient prêtes à l'emploi
+    </Section>
+    <Section title="Livraison">
+        <img src={livraison.src} alt="">
+        Toutes les machines sont livrées chez le client en 72h
+    </Section>
+    <Section title="Installation">
+        <img src={installation.src} alt="">
+        Les machines sont installées et testées chez le client
+    </Section>
 </Layout>
