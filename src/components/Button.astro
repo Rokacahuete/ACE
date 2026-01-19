@@ -19,5 +19,11 @@ const { redirect } = Astro.props;
         justify-content: center;
 
         text-decoration: none;
+
+        transition: background-color .3s, transform .3s;
+    }
+    .button:hover {
+        background-color: var(--button-hover);
+        transform: scale(1.1);
     }
 </style>
