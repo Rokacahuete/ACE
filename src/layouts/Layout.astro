@@ -14,20 +14,25 @@ import Background from '../components/Background.astro';
 		<title>ACE Transport</title>
 	</head>
 	<body>
-		<header>
-			<Header />
-		</header>
-		<Background />
-		<slot />
-		<footer>
-			<Footer />
-		</footer>
+		<div class="page">
+			<header>
+				<Header />
+			</header>
+			<Background />
+			<main class="content">
+				<slot />
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</div>
 	</body>
 </html>
 
 <style>
-	body {
-		margin: 8px;
+	html, body {
+		height: 100%;
+		margin: 0;
 	}
 
 	.centered {
@@ -35,5 +40,16 @@ import Background from '../components/Background.astro';
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
+	}
+
+	.page {
+		padding: 8px;
+		min-height: calc(100vh - 16px);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content {
+		flex: 1;
 	}
 </style>
