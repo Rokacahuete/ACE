@@ -1,0 +1,23 @@
+---
+const { redirect } = Astro.props;
+---
+
+<a href={redirect} class="button" role="button">
+    <slot></slot>
+</a>
+
+<style>
+    .button {
+        display: inline-flex;
+        width: 100px;
+        height: 60px;
+        background-color: rgb(15, 43, 71);
+        color: white;
+        border-radius: 10px;
+
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+    }
+</style>

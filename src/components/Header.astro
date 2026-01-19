@@ -1,16 +1,17 @@
 ---
 import logo from '../assets/logo.png';
+import Button from './Button.astro';
 ---
 
 <div class="container centered">
     <img class="logo" src={logo.src} alt="Logo">
     
     <div class="buttons-container">
-        <a href="/ACE/" class="button" role="button">Accueil</a>
-        <a href="/ACE/services" class="button" role="button">Services</a>
-        <a href="/ACE/apropos" class="button" role="button">À propos</a>
-        <a href="/ACE/contact" class="button" role="button">Contact</a>
-        <a href="/ACE/" class="button" role="button">Compte client</a>
+        <Button redirect="/ACE/">Acceuil</Button>
+        <Button redirect="/ACE/services">Services</Button>
+        <Button redirect="/ACE/apropos">À propos</Button>
+        <Button redirect="/ACE/contact">Contact</Button>
+        <Button redirect="/ACE/">Compte client</Button>
     </div>
 </div>
 
@@ -34,20 +35,6 @@ import logo from '../assets/logo.png';
 
     .buttons-container {
         text-align: end;
-    }
-
-    .button {
-        display: inline-flex;
-        width: 100px;
-        height: 60px;
-        background-color: rgb(15, 43, 71);
-        color: white;
-        border-radius: 10px;
-
-        align-items: center;
-        justify-content: center;
-
-        text-decoration: none;
     }
 
 	@media (min-width: 768px) {
