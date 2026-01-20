@@ -3,8 +3,8 @@ import logo from '../assets/logo.png';
 import Button from './Button.astro';
 ---
 
-<div class="container centered">
-    <img class="logo" src={logo.src} alt="Logo">
+<div class="container glass centered">
+    <img class="logo glass" src={logo.src} alt="Logo">
     
     <div class="buttons-container">
         <Button redirect="/ACE/">Acceuil</Button>
@@ -29,6 +29,12 @@ import Button from './Button.astro';
         border: 10px solid var(--border-color);
         border-radius: 15px;
         padding: 10px;
+    }
+
+    .glass {
+        box-shadow : 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter : blur(7px);
+        -webkit-backdrop-filter : blur(7px);
     }
     
     .logo {
