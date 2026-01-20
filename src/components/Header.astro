@@ -16,16 +16,6 @@ import Button from './Button.astro';
 </div>
 
 <style>
-    .container {
-        width: 100%;
-        background-color: var(--main-color);
-        border-radius: 15px;
-    }
-    
-    .logo {
-        margin: 20px;
-    }
-
 	.centered {
 		display: flex;
 		align-items: center;
@@ -33,14 +23,25 @@ import Button from './Button.astro';
 		flex-direction: column;
 	}
 
-    .buttons-container {
-        text-align: end;
+    .container {
+        width: calc(100% - 40px);
+        background-color: var(--main-color);
+        border: 10px solid var(--border-color);
+        border-radius: 15px;
+        padding: 10px;
+    }
+    
+    .logo {
+        background-color: rgba(224, 224, 224, 0.25);
+        border: 3px solid rgba(169, 169, 169, 0.5);
+        border-radius: 10px;
+        padding: 20px 153px;
+        margin-bottom: 20px;
     }
 
-	@media (min-width: 768px) {
-        .container.centered {
-            display: block;
-            text-align: start;
-        }
+    .buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 7px;
     }
 </style>
