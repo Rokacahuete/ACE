@@ -41,8 +41,10 @@ import Button from './Button.astro';
         background-color: rgba(128, 128, 128, 0.5);
         border: 3px solid rgba(169, 169, 169, 0.5);
         border-radius: 10px;
-        padding: 20px 153px;
+        padding: 20px clamp(20px, 25%, 153px);
         margin-bottom: 20px;
+        /* max-width: 100%; */
+  		box-sizing: border-box;
     }
 
     .buttons-container {
