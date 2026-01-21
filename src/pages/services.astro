@@ -6,26 +6,27 @@ import logistique from '../assets/Logistique-1.jpg';
 import configuration from '../assets/Assemblage.jpg';
 import livraison from '../assets/IMG_5100.jpg';
 import installation from '../assets/IMG_0490.jpeg';
+import Text from '../components/Text.astro';
 ---
 
 <Layout>
     <Section title="Logistique">
         <img src={logistique.src} alt="">
-        Entreposage sécurisé des produits dans un entrepot de plus de 20 000m²
+        <Text>Entreposage sécurisé des produits dans un entrepot de plus de 20 000m²</Text>
     </Section>
     <Section title="Configuration">
         <img src={configuration.src} alt="">
-        Montage et configuration des machines, pour qu'elles soient prêtes à l'emploi
+        <Text>Montage et configuration des machines, pour qu'elles soient prêtes à l'emploi</Text>
     </Section>
     <Section title="Livraison">
         <img src={livraison.src} alt="">
-        Toutes les machines sont livrées chez le client en 72h
+        <Text>Toutes les machines sont livrées chez le client en 72h</Text>
     </Section>
     <Section title="Installation">
         <img src={installation.src} alt="">
-        Les machines sont installées et testées chez le client
+        <Text>Les machines sont installées et testées chez le client</Text>
     </Section>
     <Section title="Compte client">
-        <a href="" role="button">Suivre son colis</a>
+        <a href="" role="button"><Text>Suivre son colis</Text></a>
     </Section>
 </Layout>

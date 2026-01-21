@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Banner from '../assets/3125.jpg';
 import Section from '../components/Section.astro'
+import Text from '../components/Text.astro';
 ---
 
 <Layout>
@@ -9,7 +10,7 @@ import Section from '../components/Section.astro'
 		<img class = "banner" src={Banner.src} alt="">
 	</div>
 	<Section title="Titre">
-		Texte
+		<Text>Texte</Text>
 	</Section>
 </Layout>
 
