@@ -4,15 +4,20 @@ import Button from './Button.astro';
 ---
 
 <div class="container glass centered">
-    <a href="/ACE/" class = "full"><img class="logo" src={logo.src} alt="Logo"></a>
+    <a href="/ACE/" class = "logo-container">
+        <img class="logo" src={logo.src} alt="Logo">
+    </a>
     
-    <div class="buttons-container">
+    <div class="buttons-container" id="buttons-container">
         <Button redirect="/ACE/">Acceuil</Button>
         <Button redirect="/ACE/services">Services</Button>
         <Button redirect="/ACE/apropos">À propos</Button>
         <Button redirect="/ACE/contact">Contact</Button>
         <Button redirect="/ACE/">Compte client</Button>
     </div>
+    <button class="switch" id="switch-button" type="button">
+        <div id="switch-button-text">V</div>
+    </button>
 </div>
 
 <style>
@@ -29,9 +34,14 @@ import Button from './Button.astro';
         -webkit-backdrop-filter : blur(7px);
     }
 
-    .full {
+    .logo-container {
+        background-color: rgba(128, 128, 128, 0.5);
+        border: 3px solid rgba(169, 169, 169, 0.5);
+        border-radius: 10px;
+        padding: 20px;
         width: 100%;
-        height: 100%;
+        margin-bottom: 20px;
+  		box-sizing: border-box;
     }
 
     .container {
@@ -43,17 +53,76 @@ import Button from './Button.astro';
     }
     
     .logo {
-        background-color: rgba(128, 128, 128, 0.5);
-        border: 3px solid rgba(169, 169, 169, 0.5);
-        border-radius: 10px;
-        padding: 20px clamp(20px, 25%, 153px);
-        margin-bottom: 20px;
-  		box-sizing: border-box;
+        height: 100%;
+        max-width: 100%;
+    }
+    
+    @media (min-width: 625px) {
+        .buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .switch {
+            display: none;
+        }
     }
 
-    .buttons-container {
-        display: flex;
-        align-items: center;
-        gap: 7px;
+    @media (max-width: 624px) {
+        :global(.buttons-container>.button) {
+            width: 100%;
+            height: 30px;
+            margin: 2px;
+        }
+
+        .buttons-container {
+            pointer-events: none;
+            max-height: 0;
+            opacity: 0;
+            width: 95%;
+
+            transition: max-height .3s, opacity .3s;
+        }
+        .buttons-container.open {
+            pointer-events: auto;
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .switch {
+            background-color: rgba(96, 96, 96, .5);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+
+            transition: background-color .3s, transform .3s;
+        }
+        .switch:hover {
+            background-color: rgba(96, 96, 96, 1);
+            transform: scale(1.1);
+        }
+
+        .switch>div {
+            transition: transform .3s;
+        }
+        .switch>div.open {
+            transform: scaleY(-1);
+        }
     }
 </style>
+
+<script>
+    const SWITCH_BUTTON = document.getElementById("switch-button");
+    SWITCH_BUTTON?.addEventListener("click", () => SwitchMenu());
+
+    function SwitchMenu() {
+        const BUTTONS_CONTAINER = document.getElementById("buttons-container");
+        const SWITCH_BUTTON_TEXT = document.getElementById("switch-button-text");
+        
+        BUTTONS_CONTAINER?.classList.toggle("open");
+        SWITCH_BUTTON_TEXT?.classList.toggle("open");
+    }
+</script>
