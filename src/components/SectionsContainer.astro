@@ -1,0 +1,14 @@
+<div class="sections-container">
+    <slot/>
+</div>
+
+<style>
+    .sections-container {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        max-width: 1199px;
+        margin: 20px auto;
+        gap: 10px
+    }
+</style>
