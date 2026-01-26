@@ -2,10 +2,51 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import SectionsContainer from "../components/SectionsContainer.astro";
+import Text from "../components/Text.astro";
 ---
 
 <Layout>
     <SectionsContainer>
-        <Section title="Contact"></Section>
+        <Section title="Nous contacter">
+            <Text>Quel est votre nom ?</Text>
+            <textarea name="Nom" placeholder="Entrez votre nom" maxlength="32" rows="1" required autofocus></textarea>
+            <Text>Quel est votre e-mail ?</Text>
+            <textarea name="Mail" placeholder="Indiquez votre adresse e-mail" rows="1" maxlength="32" required></textarea>
+            <Text>Quel est le sujet de votre demande ?</Text>
+            <textarea name="Sujet" placeholder="Précisez le sujet de votre demande" rows="1" maxlength="128" required></textarea>
+            <Text>Entrez votre message</Text>
+            <textarea name="Contenu" placeholder="Écrivez ici votre message" rows="16" maxlength="1024" required></textarea>
+            <button class="submit">Envoyer</button>
+        </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    textarea {
+        background-color: var(--main-color);
+        width: 85%;
+        margin-bottom: 20px;
+        resize: none;
+    }
+    
+    .submit {
+        display: inline-flex;
+        width: 100px;
+        height: 60px;
+        background-color: var(--button-color);
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+
+        transition: background-color .3s, transform .3s;
+    }
+    .submit:hover {;
+        background-color: var(--button-hover);
+        transform: scale(1.1);
+    }
+</style>
