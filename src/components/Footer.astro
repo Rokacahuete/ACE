@@ -3,11 +3,10 @@ import Text from "./Text.astro"
 ---
 
 <div class = "container glass centered">
-    <h1>ACE</h1>
     <div class="contact">
-        <a href="https://www.google.com/maps/place/Antony+Courses+Express/@48.6974268,2.2788979,13.25z/data=!4m6!3m5!1s0x47e677dcbc0a26ad:0x663d6ab9634a1b18!8m2!3d48.7047335!4d2.2910648!16s%2Fg%2F1trpkj89?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" rel="noopener noreferrer"><Text>Zone Industrielle des Clotais, 1 rue du chemin blanc, 91160 Champlan</Text></a>
-        <a href="tel:+33164478720"><Text>Tel : 01-64-47-87-20</Text></a><!-- . Fax : 01-64-47-87-21 -->
+        <a href="tel:+33164478720"><Text>Tel : 01-64-47-87-20</Text></a>
         <a href="mailto:ace@ace-transport.com"><Text>E-mail : ace@ace-transport.com</Text></a>
+        <a href="https://www.google.com/maps/place/Antony+Courses+Express/@48.6974268,2.2788979,13.25z/data=!4m6!3m5!1s0x47e677dcbc0a26ad:0x663d6ab9634a1b18!8m2!3d48.7047335!4d2.2910648!16s%2Fg%2F1trpkj89?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" rel="noopener noreferrer"><Text>1 rue du chemin blanc, 91160 Champlan</Text></a>
     </div>
 </div>
 
@@ -39,4 +38,21 @@ import Text from "./Text.astro"
 		padding: 5px 0px;
 		width: 90%;
 	}
+
+    .contact {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0px 20px;
+        padding: 5px;
+    }
+
+    .contact a {
+        flex: 1 1 300px;
+    }
+
+    :global(.contact .text) {
+        margin-block: 5px;
+    }
 </style>
