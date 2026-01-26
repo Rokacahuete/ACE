@@ -10,11 +10,11 @@ import SectionsContainer from '../components/SectionsContainer.astro';
 	<div class="banner-container">
 		<img class = "banner" src={Banner.src} alt="">
 	</div>
-	<SectionsContainer>
-		<Section title="Titre">
+	<!-- <SectionsContainer> -->
+		<Section title="Titre" class="home-section">
 			<Text>Texte</Text>
 		</Section>
-	</SectionsContainer>
+	<!-- </SectionsContainer> -->
 </Layout>
 
 <style>
@@ -38,5 +38,11 @@ import SectionsContainer from '../components/SectionsContainer.astro';
 		border: 7px solid var(--border-color);
   		box-sizing: border-box;
 		border-radius: 20px;
+	}
+
+	:global(.section-container.home-section) {
+		max-width: 90%;
+		margin-inline: auto;
+		margin-bottom: 50px
 	}
 </style>
