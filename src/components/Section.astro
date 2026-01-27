@@ -39,14 +39,19 @@ const { title, class: classname } = Astro.props;
 		width: 90%;
 	}
 
-	:global(.section-container>.text) {
-		width: 90%;
+	:global(.section-container>*) {
+		max-width: 90%;
+	}
+
+	:global(.section-container .text) {
+		box-sizing: border-box;
+		margin-top: auto;
 	}
 	
 	:global(.section-container img) {
-		max-width: 90%;
 		max-height: 300px;
 		border: 4px solid var(--border-color);
 		border-radius: 10px;
+		margin-bottom: 20px;
 	}
 </style>

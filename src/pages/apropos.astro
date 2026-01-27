@@ -2,25 +2,36 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import SectionsContainer from "../components/SectionsContainer.astro";
+import Text from "../components/Text.astro";
 ---
 
 <Layout>
     <SectionsContainer>
         <Section title="ACE">
-            ACE Transport est une entreprise spécialisée dans le transport, l'installation et la logistique de machines industrielles.
-            Nous accompagnons nos clients partout en France avec des solutions fiables et sur mesure.
+            <Text>
+                ACE Transport est une entreprise spécialisée dans le transport, l'installation et la logistique de machines industrielles.
+                Nous accompagnons nos clients partout en France avec des solutions fiables et sur mesure.
+            </Text>
         </Section>
         <Section>
-            Notre mission est d'assurer un transport sécurisé et une installation efficace de vos équipements, tout en respectant les délais et les contraintes techniques.
+            <Text>
+                Notre mission est d'assurer un transport sécurisé et une installation efficace de vos équipements, tout en respectant les délais et les contraintes techniques.
+            </Text>
         </Section>
         <Section>
-            Grâce à notre expertise technique et à notre connaissance du terrain, nous garantissons des prestations fiables, réalisées par des professionnels qualifiés.
+            <Text>
+                Grâce à notre expertise technique et à notre connaissance du terrain, nous garantissons des prestations fiables, réalisées par des professionnels qualifiés.
+            </Text>
         </Section>
         <Section>
-            Nos valeurs reposent sur la confiance, la qualité du service et la satisfaction de nos clients.
+            <Text>
+                Nos valeurs reposent sur la confiance, la qualité du service et la satisfaction de nos clients.
+            </Text>
         </Section>
         <Section>
-            <a href="" type="button">Nous contacter</a>
+            <Text>
+                <a href="" type="button">Nous contacter</a>
+            </Text>
         </Section>
     </SectionsContainer>
 </Layout>
