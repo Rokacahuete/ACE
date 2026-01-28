@@ -33,6 +33,19 @@ import Text from "../components/Text.astro";
         background-color: var(--error-color);
     }
     
+    textarea.error {
+        animation: blink-bg 2s cubic-bezier(.4,0,.6,1);
+    }
+
+    @keyframes blink-bg {
+        0%   { background-color: var(--main-color); }
+        20%  { background-color: var(--error-color); }
+        40%  { background-color: var(--main-color); }
+        60%  { background-color: var(--error-color); }
+        80%  { background-color: var(--main-color); }
+        100% { background-color: var(--error-color); }
+    }
+    
     .submit {
         display: inline-flex;
         width: 100px;
@@ -56,27 +69,54 @@ import Text from "../components/Text.astro";
 </style>
 
 <script>
+const name = document.getElementById("name");
+const mail = document.getElementById("mail");
+const subject = document.getElementById("subject");
+const content = document.getElementById("content");
+if (name && mail && subject && content) {
+    name.addEventListener("focus", () => RemoveError(name));
+    mail.addEventListener("focus", () => RemoveError(mail));
+    subject.addEventListener("focus", () => RemoveError(subject));
+    content.addEventListener("focus", () => RemoveError(content));
+
     document.getElementById("submit-button")?.addEventListener("click", async () => {
-    const name = document.getElementById("name");
-    const mail = document.getElementById("mail");
-    const subject = document.getElementById("subject");
-    const content = document.getElementById("content");
-
-    if (!name || !mail || !subject || !content) return alert("Une erreur s'est produite");
         if (name.value && mail.value && subject.value && content.value) {
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name.value, mail: mail.value, subject: subject.value, content: content.value }),
-        });
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: name.value, mail: mail.value, subject: subject.value, content: content.value }),
+            });
 
-        if (res.ok) alert("Message envoyé");
-        else alert("Erreur lors de l'envoi");
-    } else {
-        if (!name.value) name.classList.add("error");
-        if (!mail.value) mail.classList.add("error");
-        if (!subject.value) subject.classList.add("error");
-        if (!content.value) content.classList.add("error");
-    }
-});
+            if (res.ok) alert("Message envoyé");
+            else alert("Erreur lors de l'envoi");
+        } else {
+            if (!name.value) {
+                RemoveError(name);
+                AddError(name);
+            }
+            if (!mail.value) {
+                RemoveError(mail);
+                AddError(mail);
+            }
+            if (!subject.value) {
+                RemoveError(subject);
+                AddError(subject);
+            }
+            if (!content.value) {
+                RemoveError(content);
+                AddError(content);
+            }
+        }
+    });
+}
+
+function AddError(htmlElement: HTMLElement) {
+    htmlElement.classList.add("error");
+    void htmlElement.offsetWidth;
+}
+
+function RemoveError(htmlElement: HTMLElement) {
+    htmlElement.classList.remove("error");
+    void htmlElement.offsetWidth;
+}
 </script>
