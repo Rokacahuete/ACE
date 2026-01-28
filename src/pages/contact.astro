@@ -9,14 +9,14 @@ import Text from "../components/Text.astro";
     <SectionsContainer>
         <Section title="Nous contacter">
             <Text>Quel est votre nom ?</Text>
-            <textarea name="Nom" placeholder="Entrez votre nom" maxlength="32" rows="1" required autofocus></textarea>
+            <textarea name="Nom" placeholder="Entrez votre nom" maxlength="32" rows="1" required autofocus id="name"></textarea>
             <Text>Quel est votre e-mail ?</Text>
-            <textarea name="Mail" placeholder="Indiquez votre adresse e-mail" rows="1" maxlength="32" required></textarea>
+            <textarea name="Mail" placeholder="Indiquez votre adresse e-mail" rows="1" maxlength="32" required id="mail"></textarea>
             <Text>Quel est le sujet de votre demande ?</Text>
-            <textarea name="Sujet" placeholder="Précisez le sujet de votre demande" rows="1" maxlength="128" required></textarea>
+            <textarea name="Sujet" placeholder="Précisez le sujet de votre demande" rows="1" maxlength="128" required id="subject"></textarea>
             <Text>Entrez votre message</Text>
-            <textarea name="Contenu" placeholder="Écrivez ici votre message" rows="16" maxlength="1024" required></textarea>
-            <button class="submit">Envoyer</button>
+            <textarea name="Contenu" placeholder="Écrivez ici votre message" rows="16" maxlength="1024" required id="content"></textarea>
+            <button class="submit" id="submit-button" type="button">Envoyer</button>
         </Section>
     </SectionsContainer>
 </Layout>
@@ -27,6 +27,10 @@ import Text from "../components/Text.astro";
         width: 85%;
         margin-bottom: 20px;
         resize: none;
+    }
+
+    .error {
+        background-color: var(--error-color);
     }
     
     .submit {
@@ -50,3 +54,29 @@ import Text from "../components/Text.astro";
         transform: scale(1.1);
     }
 </style>
+
+<script>
+    document.getElementById("submit-button")?.addEventListener("click", async () => {
+    const name = document.getElementById("name");
+    const mail = document.getElementById("mail");
+    const subject = document.getElementById("subject");
+    const content = document.getElementById("content");
+
+    if (!name || !mail || !subject || !content) return alert("Une erreur s'est produite");
+        if (name.value && mail.value && subject.value && content.value) {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: name.value, mail: mail.value, subject: subject.value, content: content.value }),
+        });
+
+        if (res.ok) alert("Message envoyé");
+        else alert("Erreur lors de l'envoi");
+    } else {
+        if (!name.value) name.classList.add("error");
+        if (!mail.value) mail.classList.add("error");
+        if (!subject.value) subject.classList.add("error");
+        if (!content.value) content.classList.add("error");
+    }
+});
+</script>
