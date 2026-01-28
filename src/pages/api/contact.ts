@@ -4,6 +4,9 @@ import nodemailer from "nodemailer";
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
+    if (import.meta.env.MODE !== "development") {
+        return new Response(JSON.stringify({ error: "Only available in dev" }), { status: 404 });
+    }
     const data = await request.json();
     const { name, mail, subject, content } = data;
 
