@@ -1,0 +1,179 @@
+---
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>ACE Transport</title>
+</head>
+
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>ACE Transport</h1>
+      <p>Le transport fiable, depuis le terrain.</p>
+    </div>
+  </section>
+
+  <!-- PRESENTATION -->
+  <section class="section">
+    <h2>Notre métier</h2>
+    <p>
+      Depuis plusieurs années, ACE Transport accompagne ses clients
+      avec un service simple, efficace et humain.
+      Ici, pas de promesses marketing : juste du travail bien fait.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?q=80&w=1200" />
+      <h3>Transport routier</h3>
+      <p>Livraisons régionales et nationales, dans le respect des délais.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200" />
+      <h3>Logistique simple</h3>
+      <p>Chargement, déchargement et suivi clair.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?q=80&w=1200" />
+      <h3>Relation directe</h3>
+      <p>Un interlocuteur, pas une plateforme impersonnelle.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact">
+    <h2>Nous contacter</h2>
+    <p>Email : <strong>contact@ace-transport.com</strong></p>
+    <p>Téléphone : <strong>06 00 00 00 00</strong></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © {year} ACE Transport — Tous droits réservés
+  </footer>
+</body>
+</html>
+
+<style>
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f4f1ec;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background-image:
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,.55);
+  color: #f5f5f5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  letter-spacing: .15em;
+}
+
+.overlay p {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #8b5e3c;
+  display: inline-block;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  padding: 0 1rem 1.5rem;
+}
+
+/* CONTACT */
+.contact {
+  background: #e8e2d8;
+  padding: 3rem 1.5rem;
+}
+
+/* FOOTER */
+footer {
+  background: #2b2b2b;
+  color: #ddd;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
