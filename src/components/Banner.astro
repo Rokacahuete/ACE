@@ -1,0 +1,77 @@
+---
+import Img1 from '../assets/3125.jpg';
+import Img2 from '../assets/Assemblage.jpg';
+import Img3 from '../assets/IMG_0486.jpg';
+---
+
+<div class="banner-container">
+    <div class="track" id="track">
+        <img class = "banner" data-images={[
+            Img1.src,
+            Img2.src,
+            Img3.src
+        ].join(',')} src={Img1.src} id="banner" alt="">
+        <img class = "next" src={Img2.src} id="next" alt="">
+    </div>
+</div>
+
+<style>
+	.banner-container {
+		margin: 20px auto;
+		width: 95%;
+		height: 30vh;
+		border-radius: 20px;
+		border: 7px solid var(--border-color);
+  		box-sizing: border-box;
+        overflow: hidden;
+	}
+
+    .track {
+        display: flex;
+        width: 200%;
+        height: 100%;
+    }
+    .track.transition {
+        transform: translateX(-50%);
+
+        transition: transform 3s ease-in-out;
+    }
+
+	img {
+		width: 50%;
+        height: 100%;
+		object-fit: cover;
+		object-position: center 69%;
+	}
+</style>
+
+<script>
+(() => {
+    const track = document.getElementById("track") as HTMLImageElement;
+    const banner = document.getElementById("banner") as HTMLImageElement;
+    const next = document.getElementById("next") as HTMLImageElement;
+    if (!track || !banner || !next) return;
+
+    const images = banner.dataset.images?.split(',');
+    if (!images) return;
+
+    setInterval(() => {
+        console.log("start");
+        
+        track.classList.add("transition");
+        track.offsetWidth;
+    }, 5_000);
+    
+    let index = 0;
+    track.addEventListener("transitionend", (transition) => {
+        console.log("end");
+        
+        track.classList.remove("transition");
+        track.offsetWidth;
+        banner.src = next.src;
+        
+        index++;
+        next.src = images[index%images.length];
+    });
+})();
+</script>

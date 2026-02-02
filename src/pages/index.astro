@@ -1,20 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Banner from '../assets/3125.jpg';
 import Section from '../components/Section.astro'
 import Text from '../components/Text.astro';
 import SectionsContainer from '../components/SectionsContainer.astro';
+import Banner from '../components/Banner.astro';
 ---
 
 <Layout>
-	<div class="banner-container">
-		<img class = "banner" src={Banner.src} alt="">
-	</div>
-	<!-- <SectionsContainer> -->
-		<Section title="Titre" class="home-section">
-			<Text>Texte</Text>
-		</Section>
-	<!-- </SectionsContainer> -->
+	<Banner />
+	<Section title="Titre" class="home-section">
+		<Text>Texte</Text>
+	</Section>
 </Layout>
 
 <style>
@@ -23,21 +19,6 @@ import SectionsContainer from '../components/SectionsContainer.astro';
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
-	}
-
-	.banner-container {
-		margin: 20px auto;
-		width: 95%;
-	}
-
-	.banner {
-		width: 100%;
-		max-height: 30vh;
-		object-fit: cover;
-		object-position: center 69%;
-		border: 7px solid var(--border-color);
-  		box-sizing: border-box;
-		border-radius: 20px;
 	}
 
 	:global(.section-container.home-section) {
