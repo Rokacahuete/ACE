@@ -1,7 +1,8 @@
 ---
 import Img1 from '../assets/3125.jpg';
-import Img2 from '../assets/Assemblage.jpg';
-import Img3 from '../assets/IMG_0486.jpg';
+import Img2 from '../assets/IMG_5113.jpg';
+import Img3 from '../assets/IMG_5100.jpg';
+import Img4 from '../assets/IMG_0549.jpg';
 ---
 
 <div class="banner-container">
@@ -9,8 +10,10 @@ import Img3 from '../assets/IMG_0486.jpg';
         <img class = "banner" data-images={[
             Img1.src,
             Img2.src,
-            Img3.src
-        ].join(',')} src={Img1.src} id="banner" alt="">
+            Img3.src,
+            Img4.src
+        ].join(',')}
+        data-positions={["center 69%", "center 53%", "center 55%", "center 50%"].join(',')} src={Img1.src} id="banner" alt="">
         <img class = "next" src={Img2.src} id="next" alt="">
     </div>
 </div>
@@ -53,25 +56,29 @@ import Img3 from '../assets/IMG_0486.jpg';
     if (!track || !banner || !next) return;
 
     const images = banner.dataset.images?.split(',');
-    if (!images) return;
+    const positions = banner.dataset.positions?.split(',');
+    if (!images || !positions || images.length <= 0) return;
+    positions.length = images.length;
+    
+    next.src = images[1];
+    next.style.objectPosition = positions[1];
 
     setInterval(() => {
-        console.log("start");
-        
         track.classList.add("transition");
         track.offsetWidth;
     }, 5_000);
     
-    let index = 0;
+    let index = 1;
     track.addEventListener("transitionend", (transition) => {
-        console.log("end");
-        
         track.classList.remove("transition");
         track.offsetWidth;
+
         banner.src = next.src;
+        banner.style.objectPosition = positions[index];
         
-        index++;
-        next.src = images[index%images.length];
+        index = (index + 1)%images.length;
+        next.src = images[index];
+        next.style.objectPosition = positions[index];
     });
 })();
 </script>
