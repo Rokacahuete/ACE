@@ -3,13 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import SectionsContainer from "../components/SectionsContainer.astro";
 import Text from "../components/Text.astro";
+
+import ADS from "../assets/ADS.jpg";
+import AS from "../assets/AS.jpg";
+import CL from "../assets/CL.jpg";
+import LP from "../assets/LP.jpg";
+import PC from "../assets/PC.jpg";
+import RS from "../assets/RS.jpg";
+import SDS from "../assets/SDS.jpg";
+// import FP from "../assets/FP.jpg";
 ---
 
 <Layout>
     <SectionsContainer>
         <Section title="ACE">
             <Text>
-                Fondée en 1984, ACE - Antony Courses Express s'est développée à Champlan (Essonne) autour d'un objectif clair : proposer des solutions de transport et de logistique à échelle nationnale, fiables et maîtrisées. Depuis sa création, l'entreprise a évolué de manière continue, en adaptant ses méthodes et ses outils aux besoins de ses clients professionnels, tout en conservant une organisation à taille humaine.
+                Fondée en 1984, ACE - Antony Courses Express s'est développée à Champlan (Essonne) autour d'un objectif clair : proposer des solutions de transport et de logistique à échelle nationnale, fiables et maîtrisées. Depuis sa création, l'entreprise a évolué de manière continue, en adaptant ses méthodes et ses outils aux besoins de ses clients, tout en conservant une organisation à taille humaine.
             </Text>
         </Section>
     </SectionsContainer>
@@ -79,6 +88,47 @@ import Text from "../components/Text.astro";
             <Text>
                 Signature d'un contrat avec Mail Services. Ce contrat stipule l'installation de plus de 3000 « locker Pack-City » dans toute la France.
             </Text>
+        </Section>
+    </SectionsContainer>
+    <SectionsContainer>
+        <Section title="Notre équipe"></Section>
+    </SectionsContainer>
+    <SectionsContainer>
+        <Section title="Antonio DOS SANTOS">
+            <img src={ADS.src}>
+            <Text centered>Président</Text>
+        </Section>
+        <Section title="Ludovic PLAYOUT">
+            <img src={LP.src}>
+            <Text centered>Directeur Supply Chain</Text>
+        </Section>
+    </SectionsContainer>
+    <SectionsContainer>
+        <Section title="Sandra DOS SANTOS">
+            <img src={SDS.src}>
+            <Text centered>Responsable Administrative</Text>
+        </Section>
+        <Section title="Carlos LOUREIRO">
+            <img src={CL.src}>
+            <Text centered>Responsable Opérationnnel</Text>
+        </Section>
+        <Section title="Adrien SIMOES">
+            <img src={AS.src}>
+            <Text centered>Responsable Exploitation IDF</Text>
+        </Section>
+    </SectionsContainer>
+    <SectionsContainer>
+        <Section title="Frederic PERDRIGER">
+            <!-- <img src={FP.src}> -->
+            <Text centered>Responsable Logistique</Text>
+        </Section>
+        <Section title="Rabi SOUGUIR">
+            <img src={RS.src}>
+            <Text centered>Responsable Technique</Text>
+        </Section>
+        <Section title="Patrice CAPDEVILLA">
+            <img src={PC.src}>
+            <Text centered>Responsable Réseau</Text>
         </Section>
     </SectionsContainer>
     <SectionsContainer>
