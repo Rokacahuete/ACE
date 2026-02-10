@@ -22,12 +22,17 @@ import Img4 from '../assets/IMG_0549.jpg';
 	.banner-container {
 		margin: 20px auto;
 		width: 95%;
-		height: 30vh;
+		height: 400px;
 		border-radius: 20px;
 		border: 7px solid var(--border-color);
   		box-sizing: border-box;
         overflow: hidden;
 	}
+    @media (max-width: 768px) {
+        .banner-container {
+            height: 250px;
+        }
+    }
 
     .track {
         display: flex;
