@@ -1,8 +1,22 @@
+---
+const { title } = Astro.props;
+---
+
 <article class="item glass">
+	{ title ? <h1>{title}</h1> : "" }
 	<slot />
 </article>
 
 <style>
+	h1 {
+		background-color: var(--title-color);
+		border: 5px solid var(--border-color);
+		border-radius: 10px;
+		padding: 5px 0px;
+		margin-top: 0;
+		width: 90%;
+	}
+
     .glass {
         box-shadow : 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter : blur(7px);
@@ -16,6 +30,7 @@
         border-radius: 12px;
         padding: 20px;
         flex: 0 0 calc((100% - 32px) / 3);
+        min-width: min(300px, 100%);
         margin-bottom: 10px;
         box-sizing: border-box;
     }
