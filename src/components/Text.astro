@@ -1,11 +1,23 @@
-<p class="text">
+---
+const { centered } = Astro.props;
+---
+
+<p class=`text ${centered ? "centered" : ""}`>
     <slot></slot>
 </p>
 
 <style>
+	.centered {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+	}
+    
     .text {
+        text-align: left;
         color: rgb(0, 0, 0);
-        padding-block: 20px;
+        padding: 20px;
         width: 100%;
         background-color: var(--text-color);
         border: 4px solid var(--border-color);
