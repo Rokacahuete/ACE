@@ -1,0 +1,98 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<div class="carousel">
+	<button class="nav left" aria-label="Précédent">‹</button>
+
+	<div class="viewport">
+		<div class="track" id="track">
+            <slot />
+		</div>
+	</div>
+
+	<button class="nav right" aria-label="Suivant">›</button>
+</div>
+
+<style>
+    .carousel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-width: min(1199px, 90%);
+    }
+
+    .viewport {
+        overflow: hidden;
+    }
+
+    .track {
+        display: flex;
+        gap: 16px;
+        transition: transform .4s ease;
+    }
+
+    .slide {
+        flex: 0 0 calc(100% / 3);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 900px) {
+        .slide { flex-basis: 50%; }
+    }
+
+    @media (max-width: 600px) {
+        .slide { flex-basis: 100%; }
+    }
+
+    .nav {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+
+<script>
+(() => {
+	const track = document.getElementById("track");
+	if (!track) return;
+
+	const slides = track.children;
+	let index = 0;
+
+    const update = () => {
+        const slide = slides[0];
+        if (!slide) return;
+
+        const slideWidth = slide.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const visible = getVisible();
+        const max = slides.length - visible;
+
+        index = (index + slides.length) % slides.length;
+        if (index > max) index = 0;
+
+        track.style.transform = `translateX(-${index * (slideWidth + gap)}px)`;
+    };
+
+	const getVisible = () =>
+		window.innerWidth < 600 ? 1 :
+		window.innerWidth < 900 ? 2 : 3;
+
+	document.querySelector(".nav.left")?.addEventListener("click", () => {
+		index--;
+		update();
+	});
+
+	document.querySelector(".nav.right")?.addEventListener("click", () => {
+		index++;
+		update();
+	});
+
+	window.addEventListener("resize", update);
+	update();
+})();
+</script>
