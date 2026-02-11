@@ -56,12 +56,18 @@ import Logo from '../assets/favicon.png';
 		margin: 0;
 	}
 
-	.centered {
+	:global(.centered) {
 		display: flex;
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
 	}
+
+    :global(.glass) {
+        box-shadow : 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter : blur(7px);
+        -webkit-backdrop-filter : blur(7px);
+    }
 
 	.page {
 		padding: 8px;
