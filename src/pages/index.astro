@@ -2,12 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro'
 import Text from '../components/Text.astro';
-import SectionsContainer from '../components/SectionsContainer.astro';
 import Banner from '../components/Banner.astro';
-import SupplyChain from '../assets/supply-chain2.png';
-import Button from '../components/Button.astro';
 
 import CustomersSection from '../sections/Customers.astro';
+import SupplyChain from '../sections/SupplyChain.astro';
 ---
 
 <Layout>
@@ -19,26 +17,7 @@ import CustomersSection from '../sections/Customers.astro';
 			ACE dispose d'infrastructures logistiques lui permettant d'assurer l'entreposage, la préparation, et la livraison rapide des équipements chez ses clients. Son activité s'adresse essentiellement à une clientèle professionnelle, avec des prestations couvrant l'ensemble de la chaîne logistique courte, du stockage jusqu'à l'installation finale.
 		</Text>
 	</Section>
-	<Section class="home-section">
-		<div class="services-buttons-container">
-			<img src={SupplyChain.src} alt="" class="supply-chain">
-			<a href="/ACE/services/logistique" class="service-button" style="top: 25%; left: 19%;" />
-			<div class="service-text" style="top: 22%; left: 19%;">Logistique</div>
-			<a href="/ACE/services/assemblage" class="service-button" style="top: 49.2%; left: 30.8%;" />
-			<div class="service-text" style="top: 56.7%; left: 30.8%;">Assemblage</div>
-			<a href="/ACE/services/paramétrage" class="service-button" style="top: 30%; left: 38%;" />
-			<div class="service-text" style="top: 27%; left: 39%;">Paramétrage</div>
-			<a href="/ACE/services/livraison" class="service-button" style="top: 49%; left: 59%;" />
-			<div class="service-text" style="top: 56.5%; left: 59%;">Livraison</div>
-			<a href="/ACE/services/locker" class="service-button" style="top: 21%; left: 71%;" />
-			<div class="service-text" style="top: 18%; left: 71%;">Locker</div>
-			<a href="/ACE/services/installation" class="service-button" style="top: 33.5%; left: 84.8%;" />
-			<div class="service-text" style="top: 28%; left: 84.8%;">Installation</div>
-			<a href="/ACE/services/traitement-reverse" class="service-button" style="top: 68%; left: 45%;" />
-			<div class="service-text" style="top: 65%; left: 45%;">Traitement reverse</div>
-		</div>
-		<Button redirect="/ACE/contact">Vous souhaitez un devis ? Contactez-nous !</Button>
-	</Section>
+	<SupplyChain />
 	<CustomersSection />
 </Layout>
 
@@ -52,49 +31,5 @@ import CustomersSection from '../sections/Customers.astro';
 	:global(.section-container.home-section .button) {
 		width: 85%;
 		margin-bottom: 10px;
-	}
-
-	.services-buttons-container {
-		position: relative;
-		width: 80%;
-		margin-bottom: 10px;
-	}
-
-	.service-button {
-		position: absolute;
-		width: 2%;
-		height: 3.6%;
-		background-color: rgba(0, 0, 139, 0.5);
-		border-radius: 50%;
-		transform: translateX(-50%);
-		transition: background-color .2s, transform .2s;
-	}
-	.service-button:hover {
-		background-color: darkblue;
-		transform: translateX(-50%) scale(1.1);
-	}
-
-	.service-text {
-		position: absolute;
-		transform: translate(-50%, -50%);
-		white-space: nowrap;
-		background-color: var(--title-color);
-		padding: 2px 20px;
-		border: 2px solid var(--border-color);
-		border-radius: 10px;
-	}
-
-	@media (max-width: 1048px) {
-		.service-text {
-			display: none;
-		}
-	}
-
-	.supply-chain {
-		width: calc(100% - 10px);
-		height: auto;
-		max-height: none;
-		margin: 0;
-		background-color: var(--button-color);
 	}
 </style>

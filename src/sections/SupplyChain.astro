@@ -1,0 +1,104 @@
+---
+import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
+
+import Background from '../assets/supply-chain/background.png';
+import LogoLogistique from "../assets/supply-chain/logo-logistique.png";
+import LogoParametrage from "../assets/supply-chain/logo-paramétrage.png";
+import LogoLivraison from "../assets/supply-chain/logo-livraison.png";
+import LogoInstallation from "../assets/supply-chain/logo-installation.png";
+import LogoTraitementReverse from "../assets/supply-chain/logo-traitement-reverse.png";
+import LogoLocker from "../assets/supply-chain/logo-locker.png";
+import LogoBorne from "../assets/supply-chain/logo-borne.png";
+---
+
+<Section class="home-section">
+    <div class="services-buttons-container">
+        <img src={Background.src} alt="" class="supply-chain">
+
+        <a href="/ACE/services/logistique" class="service-button" style="top: 18.5%; left: 21%;">
+            <img src={LogoLogistique.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 15.5%; left: 21%;">Logistique</div>
+
+        <a href="/ACE/services/assemblage" class="service-button" style="top: 49.2%; left: 30.8%;">
+            <!-- <img src={Background.src} alt="" class="service-logo"> -->
+        </a>
+        <div class="service-text" style="top: 56.7%; left: 30.8%;">Assemblage</div>
+
+        <a href="/ACE/services/paramétrage" class="service-button" style="top: 22%; left: 39.5%;">
+            <img src={LogoParametrage.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 17%; left: 46%;">Paramétrage</div>
+
+        <a href="/ACE/services/livraison" class="service-button" style="top: 52%; left: 51%;">
+            <img src={LogoLivraison.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 65%; left: 51%;">Livraison</div>
+
+        <a href="/ACE/services/locker" class="service-button" style="top: 14%; left: 71%;">
+            <img src={LogoLocker.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 11%; left: 71%;">Locker</div>
+
+        <a href="/ACE/services/installation" class="service-button" style="top: 35%; left: 84.4%;">
+            <img src={LogoInstallation.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 28%; left: 84.8%;">Installation</div>
+
+        <a href="/ACE/services/traitement-reverse" class="service-button" style="top: 73%; left: 78%;">
+            <img src={LogoTraitementReverse.src} alt="" class="service-logo">
+        </a>
+        <div class="service-text" style="top: 70%; left: 83%;">Traitement reverse</div>
+    </div>
+    <Button redirect="/ACE/contact">Vous souhaitez un devis ? Contactez-nous !</Button>
+</Section>
+
+<style>
+	.services-buttons-container {
+		position: relative;
+		width: 80%;
+		margin-bottom: 10px;
+	}
+
+	.service-button {
+		position: absolute;
+		width: 5%;
+		height: 9%;
+		border-radius: 50%;
+		transform: translateX(-50%);
+	}
+
+    .service-logo {
+		width: 100%;
+		height: 100%;
+		transition: transform .2s;
+    }
+	.service-logo:hover {
+		transform: scale(1.1);
+	}
+
+	.service-text {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		white-space: nowrap;
+		background-color: var(--title-color);
+		padding: 2px 20px;
+		border: 2px solid var(--border-color);
+		border-radius: 10px;
+	}
+
+	@media (max-width: 1048px) {
+		.service-text {
+			display: none;
+		}
+	}
+
+	.supply-chain {
+		width: calc(100% - 10px);
+		height: auto;
+		max-height: none;
+		margin: 0;
+		background-color: var(--button-color);
+	}
+</style>
