@@ -8,37 +8,52 @@ import livraison from '../assets/IMG_5100.jpg';
 import installation from '../assets/IMG_0490.jpeg';
 import Text from '../components/Text.astro';
 import SectionsContainer from '../components/SectionsContainer.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout>
     <SectionsContainer>
         <Section title="Logistique">
             <img src={logistique.src} alt="">
-            <Text>Entreposage sécurisé des produits dans un entrepot de plus de 20 000m²</Text>
+            <Text>Entreposage sécurisé des produits dans un entrepot de plus de 25 000m²</Text>
+            <Button redirect="/ACE/services/logistique">En savoir plus</Button>
         </Section>
         <Section title="Assemblage">
             <img src={configuration.src} alt="">
             <Text>Montage et configuration des machines, pour qu'elles soient prêtes à l'emploi</Text>
+            <Button redirect="/ACE/services/assemblage">En savoir plus</Button>
         </Section>
         <Section title="Paramétrage">
             <img src={configuration.src} alt="">
             <Text>Montage et configuration des machines, pour qu'elles soient prêtes à l'emploi</Text>
+            <Button redirect="/ACE/services/paramétrage">En savoir plus</Button>
         </Section>
         <Section title="Livraison">
             <img src={livraison.src} alt="">
             <Text>Toutes les machines sont livrées chez le client en 72h</Text>
+            <Button redirect="/ACE/services/livraison">En savoir plus</Button>
         </Section>
         <Section title="Installation">
             <img src={installation.src} alt="">
             <Text>Les machines sont installées et testées chez le client</Text>
+            <Button redirect="/ACE/services/installation">En savoir plus</Button>
         </Section>
         <Section title="Traitement Reverse">
             <img src={installation.src} alt="">
             <Text>Lors du renouvellement de machines, ACE s'occupe du retrait des machines</Text>
+            <Button redirect="/ACE/services/traitement-reverse">En savoir plus</Button>
         </Section>
         <Section title="Locker">
             <img src={installation.src} alt="">
             <Text>ACE installe également les lockers</Text>
+            <Button redirect="/ACE/services/locker">En savoir plus</Button>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    :global(.section-container>.button) {
+        margin-bottom: 10px;
+        width: 90%;
+    }
+</style>
