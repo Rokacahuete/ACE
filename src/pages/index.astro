@@ -22,19 +22,19 @@ import CustomersSection from '../sections/Customers.astro';
 	<Section class="home-section">
 		<div class="services-buttons-container">
 			<img src={SupplyChain.src} alt="" class="supply-chain">
-			<a href="/ACE/services" class="service-button" style="top: 25%; left: 19%;" />
-			<div class="service-text" style="top: 22%; left: 19%;">Stockage</div>
-			<a href="/ACE/services" class="service-button" style="top: 49.2%; left: 30.8%;" />
+			<a href="/ACE/services/logistique" class="service-button" style="top: 25%; left: 19%;" />
+			<div class="service-text" style="top: 22%; left: 19%;">Logistique</div>
+			<a href="/ACE/services/assemblage" class="service-button" style="top: 49.2%; left: 30.8%;" />
 			<div class="service-text" style="top: 56.7%; left: 30.8%;">Assemblage</div>
-			<a href="/ACE/services" class="service-button" style="top: 30%; left: 38%;" />
+			<a href="/ACE/services/paramétrage" class="service-button" style="top: 30%; left: 38%;" />
 			<div class="service-text" style="top: 27%; left: 39%;">Paramétrage</div>
-			<a href="/ACE/services" class="service-button" style="top: 49%; left: 59%;" />
+			<a href="/ACE/services/livraison" class="service-button" style="top: 49%; left: 59%;" />
 			<div class="service-text" style="top: 56.5%; left: 59%;">Livraison</div>
-			<a href="/ACE/services" class="service-button" style="top: 21%; left: 71%;" />
+			<a href="/ACE/services/locker" class="service-button" style="top: 21%; left: 71%;" />
 			<div class="service-text" style="top: 18%; left: 71%;">Locker</div>
-			<a href="/ACE/services" class="service-button" style="top: 33.5%; left: 84.8%;" />
+			<a href="/ACE/services/installation" class="service-button" style="top: 33.5%; left: 84.8%;" />
 			<div class="service-text" style="top: 28%; left: 84.8%;">Installation</div>
-			<a href="/ACE/services" class="service-button" style="top: 68%; left: 45%;" />
+			<a href="/ACE/services/traitement-reverse" class="service-button" style="top: 68%; left: 45%;" />
 			<div class="service-text" style="top: 65%; left: 45%;">Traitement reverse</div>
 		</div>
 		<Button redirect="/ACE/contact">Vous souhaitez un devis ? Contactez-nous !</Button>
@@ -82,6 +82,12 @@ import CustomersSection from '../sections/Customers.astro';
 		padding: 2px 20px;
 		border: 2px solid var(--border-color);
 		border-radius: 10px;
+	}
+
+	@media (max-width: 1048px) {
+		.service-text {
+			display: none;
+		}
 	}
 
 	.supply-chain {
