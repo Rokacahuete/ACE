@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import SectionsContainer from "../../components/SectionsContainer.astro";
 import Text from "../../components/Text.astro";
+import Button from "../../components/Button.astro";
 ---
 
 <Layout>
@@ -21,6 +22,18 @@ import Text from "../../components/Text.astro";
                 Atelier de Masterisation<br>
                 Equipe de projet en charge de « masteriser » la préparation en intégrant les exigences du client final (sécurité - protocoles, …)
             </Text>
+            <div class="buttons-container">
+                <Button redirect="/ACE/services/assemblage">Assemblage</Button>
+                <Button redirect="/ACE/services/livraison">Livraison</Button>
+            </div>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    .buttons-container {
+        display: flex;
+        gap: 100px;
+        margin-bottom: 10px;
+    }
+</style>

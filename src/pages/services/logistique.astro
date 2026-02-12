@@ -1,4 +1,5 @@
 ---
+import Button from "../../components/Button.astro";
 import Section from "../../components/Section.astro";
 import SectionsContainer from "../../components/SectionsContainer.astro";
 import Text from "../../components/Text.astro";
@@ -18,6 +19,16 @@ import Layout from "../../layouts/Layout.astro";
                 Equipements Mobiles embarquant de dernière génération<br>
                 Lecture Code Barre Constructeur en Réception - Localisation informatisée - Préparation Automatisée - Contrôles de Stock - Inventaire
             </Text>
+            <div class="buttons-container">
+                <Button redirect="/ACE/services/assemblage" class="next-button">Assemblage</Button>
+            </div>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    .buttons-container {
+        display: flex;
+        margin-bottom: 10px;
+    }
+</style>

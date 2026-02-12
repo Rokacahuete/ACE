@@ -1,8 +1,8 @@
 ---
-const { redirect, target } = Astro.props;
+const { redirect, target, id } = Astro.props;
 ---
 
-<a href={redirect} class="button" target=`${target ? "_blank" : ""}` role="button">
+<a href={redirect} class="button" target=`${target ? "_blank" : ""}` role="button" id={id ?? ""}>
     <slot></slot>
 </a>
 

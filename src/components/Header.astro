@@ -8,7 +8,7 @@ import Button from './Button.astro';
         <img class="logo" src={logo.src} alt="Logo">
     </a>
     
-    <div class="buttons-container" id="buttons-container">
+    <div class="header-buttons-container" id="header-buttons-container">
         <Button redirect="/ACE/">Acceuil</Button>
         <Button redirect="/ACE/apropos">À propos</Button>
         <Button redirect="/ACE/services">Services</Button>
@@ -45,7 +45,7 @@ import Button from './Button.astro';
     }
     
     @media (min-width: 625px) {
-        .buttons-container {
+        .header-buttons-container {
             display: flex;
             align-items: center;
             gap: 7px;
@@ -57,13 +57,13 @@ import Button from './Button.astro';
     }
 
     @media (max-width: 624px) {
-        :global(.buttons-container>.button) {
+        :global(.header-buttons-container>.button) {
             width: 100%;
             height: 30px;
             margin: 2px;
         }
 
-        .buttons-container {
+        .header-buttons-container {
             pointer-events: none;
             max-height: 0;
             opacity: 0;
@@ -71,7 +71,7 @@ import Button from './Button.astro';
 
             transition: max-height .3s, opacity .3s;
         }
-        .buttons-container.open {
+        .header-buttons-container.open {
             pointer-events: auto;
             max-height: 200px;
             opacity: 1;
@@ -106,7 +106,7 @@ import Button from './Button.astro';
     SWITCH_BUTTON?.addEventListener("click", () => SwitchMenu());
 
     function SwitchMenu() {
-        const BUTTONS_CONTAINER = document.getElementById("buttons-container");
+        const BUTTONS_CONTAINER = document.getElementById("header-buttons-container");
         const SWITCH_BUTTON_TEXT = document.getElementById("switch-button-text");
         
         BUTTONS_CONTAINER?.classList.toggle("open");

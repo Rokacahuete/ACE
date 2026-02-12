@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import SectionsContainer from "../../components/SectionsContainer.astro";
 import Text from "../../components/Text.astro";
+import Button from "../../components/Button.astro";
 ---
 
 <Layout>
@@ -30,6 +31,18 @@ import Text from "../../components/Text.astro";
                 Des véhicules propres pour livrer « Vert »<br>
                 Norme Euro6 pour l'ensemble du parc - Suivi Emissions CO2 - Démarche « Objectif CO2
             </Text>
+            <div class="buttons-container">
+                <Button redirect="/ACE/services/paramétrage">Paramétrage</Button>
+                <Button redirect="/ACE/services/installation">Lnstallation</Button>
+            </div>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    .buttons-container {
+        display: flex;
+        gap: 100px;
+        margin-bottom: 10px;
+    }
+</style>

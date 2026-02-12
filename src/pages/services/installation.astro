@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import SectionsContainer from "../../components/SectionsContainer.astro";
 import Text from "../../components/Text.astro";
+import Button from "../../components/Button.astro";
 ---
 
 <Layout>
@@ -33,6 +34,18 @@ import Text from "../../components/Text.astro";
                 Contrôles des fonctionnalités avancées<br>
                 Carnet d'adresses (Réseau ou local) - Contrôles Accès (lecteur de badge) - Remontée consommables (Kpax -…)
             </Text>
+            <div class="buttons-container">
+                <Button redirect="/ACE/services/livraison">Livraison</Button>
+                <Button redirect="/ACE/services/traitement-reverse">Traitement Reverse</Button>
+            </div>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    .buttons-container {
+        display: flex;
+        gap: 100px;
+        margin-bottom: 10px;
+    }
+</style>
