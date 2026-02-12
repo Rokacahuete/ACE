@@ -6,8 +6,8 @@ import SectionsContainer from '../components/SectionsContainer.astro';
 import Banner from '../components/Banner.astro';
 import SupplyChain from '../assets/supply-chain2.png';
 import Button from '../components/Button.astro';
-import Carousel from '../components/Carousel.astro';
-import CarouselItem from '../components/CarouselItem.astro';
+
+import CustomersSection from '../sections/Customers.astro';
 ---
 
 <Layout>
@@ -39,13 +39,17 @@ import CarouselItem from '../components/CarouselItem.astro';
 		</div>
 		<Button redirect="/ACE/contact">Vous souhaitez un devis ? Contactez-nous !</Button>
 	</Section>
+	<SectionsContainer>
+		<Section title="Ils nous font déjà confinace"></Section>
+	</SectionsContainer>
+	<CustomersSection />
 </Layout>
 
 <style>
 	:global(.section-container.home-section) {
 		width: 90%;
 		margin-inline: auto;
-		margin-bottom: 10px
+		margin-bottom: 10px;
 	}
 	
 	:global(.section-container.home-section .button) {

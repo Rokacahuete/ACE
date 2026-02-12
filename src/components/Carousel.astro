@@ -6,7 +6,7 @@
 	<button class="nav left" aria-label="Précédent">‹</button>
 
 	<div class="viewport">
-		<div class="track" id="track">
+		<div class="track-carousel" id="track-carousel">
             <slot />
 		</div>
 	</div>
@@ -26,7 +26,7 @@
         overflow: hidden;
     }
 
-    .track {
+    .track-carousel {
         display: flex;
         gap: 16px;
         transition: transform .4s ease;
@@ -57,13 +57,15 @@
 
 <script>
 (() => {
-	const track = document.getElementById("track");
+	const track = document.getElementById("track-carousel");
 	if (!track) return;
 
 	const slides = track.children;
 	let index = 0;
 
     const update = () => {
+        console.log(track);
+        
         const slide = slides[0];
         if (!slide) return;
 

@@ -1,0 +1,61 @@
+---
+import Carousel from "../components/Carousel.astro";
+import CarouselItem from "../components/CarouselItem.astro";
+import Section from "../components/Section.astro";
+
+import Canon from "../assets/logos-clients/canon.png";
+import DocumentStore from "../assets/logos-clients/document-store.png";
+import Factoria from "../assets/logos-clients/factoria.png";
+import GroupeDFM from "../assets/logos-clients/groupe-dfm.png";
+import HP from "../assets/logos-clients/hp.jpg";
+import Kyocera from "../assets/logos-clients/kyocera.png";
+import Lexmark from "../assets/logos-clients/lexmark.png";
+import NGI from "../assets/logos-clients/ngi.png";
+import OKI from "../assets/logos-clients/oki.png";
+import Ricoh from "../assets/logos-clients/ricoh.png";
+import Samsung from "../assets/logos-clients/samsung.png";
+import SCC from "../assets/logos-clients/scc.png";
+import Xerox from "../assets/logos-clients/xerox.png";
+---
+
+<Carousel>
+    <CarouselItem title="Ricoh">
+        <img src={Ricoh.src} alt="Logo Ricoh">
+    </CarouselItem>
+    <CarouselItem title="Xerox">
+        <img src={Xerox.src} alt="Logo Xerox">
+    </CarouselItem>
+    <CarouselItem title="Kyocera">
+        <img src={Kyocera.src} alt="Logo Kyocera">
+    </CarouselItem>
+    <CarouselItem title="Factoria Groupe">
+        <img src={Factoria.src} alt="Logo">
+    </CarouselItem>
+    <CarouselItem title="Document Store">
+        <img src={DocumentStore.src} alt="Logo Document Store">
+    </CarouselItem>
+    <CarouselItem title="Canon">
+        <img src={Canon.src} alt="Logo Canon">
+    </CarouselItem>
+    <CarouselItem title="Lexmark">
+        <img src={Lexmark.src} alt="Logo Lexmark">
+    </CarouselItem>
+    <CarouselItem title="Samsung">
+        <img src={Samsung.src} alt="Logo Samsung">
+    </CarouselItem>
+    <CarouselItem title="HP">
+        <img src={HP.src} alt="Logo HP">
+    </CarouselItem>
+    <CarouselItem title="Groupe DFM">
+        <img src={GroupeDFM.src} alt="Logo Groupe DFM">
+    </CarouselItem>
+    <CarouselItem title="NGI">
+        <img src={NGI.src} alt="Logo NGI">
+    </CarouselItem>
+    <CarouselItem title="OKI">
+        <img src={OKI.src} alt="Logo OKI">
+    </CarouselItem>
+    <CarouselItem title="SCC">
+        <img src={SCC.src} alt="Logo SCC">
+    </CarouselItem>
+</Carousel>
