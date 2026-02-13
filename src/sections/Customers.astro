@@ -1,9 +1,14 @@
 ---
-import Carousel from "../components/Carousel.astro";
-import CarouselItem from "../components/CarouselItem.astro";
-import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
 import SectionsContainer from "../components/SectionsContainer.astro";
+import Section from "../components/Section.astro";
 
+import Tree from "../assets/Tree.png";
+import Amazon from "../assets/logos-clients/amazon.png";
+import PackCity from "../assets/logos-clients/pack-city.png";
+import Quadient from "../assets/logos-clients/quadient.png";
+import Sharp from "../assets/logos-clients/sharp.png";
+import Toshiba from "../assets/logos-clients/toshiba.png";
 import Canon from "../assets/logos-clients/canon.png";
 import DocumentStore from "../assets/logos-clients/document-store.png";
 import Factoria from "../assets/logos-clients/factoria.png";
@@ -20,85 +25,98 @@ import Xerox from "../assets/logos-clients/xerox.png";
 ---
 
 <SectionsContainer>
-    <Section title="Ils nous font déjà confinace"></Section>
+    <Section title="Ils nous font déjà confinace">
+        <div class="customers-container">
+            <img src={Tree.src} alt="" class="tree">
+        
+            <a href="" style="top: 40%; left: 35%;">
+                <img src={Ricoh.src} alt="Logo Ricoh" class="logo-customer">
+            </a>
+            <a href="" style="top: 30%; left: 48%;">
+                <img src={SCC.src} alt="Logo SCC" class="logo-customer">
+            </a>
+            <a href="" style="top: 33%; left: 68%;">
+                <img src={Kyocera.src} alt="Logo Kyocera" class="logo-customer">
+            </a>
+            <a href="" style="top: 27%; left: 30%;">
+                <img src={Quadient.src} alt="Logo Quadient" class="logo-customer">
+            </a>
+            <a href="" style="top: 24%; left: 62%;">
+                <img src={Toshiba.src} alt="Logo Toshiba" class="logo-customer">
+            </a>
+            <a href="" style="top: 48%; left: 45%;">
+                <img src={Amazon.src} alt="Logo Amazon" class="logo-customer">
+            </a>
+            <a href="" style="top: 45%; left: 75%;">
+                <img src={PackCity.src} alt="Logo Pack City" class="logo-customer">
+            </a>
+            <a href="" style="top: 52%; left: 68%;">
+                <img src={Sharp.src} alt="Logo Sharp" class="logo-customer">
+            </a>
+            <a href="" style="top: 58%; left: 75%;">
+                <img src={Xerox.src} alt="Logo Xerox" class="logo-customer">
+            </a>
+            <a href="" style="top: 46%; left: 28%;">
+                <img src={Factoria.src} alt="Logo" class="logo-customer">
+            </a>
+            <a href="" style="top: 70%; left: 45%;">
+                <img src={DocumentStore.src} alt="Logo Document Store" class="logo-customer">
+            </a>
+            <a href="" style="top: 30%; left: 82%;">
+                <img src={Canon.src} alt="Logo Canon" class="logo-customer">
+            </a>
+            <a href="" style="top: 33%; left: 15%;">
+                <img src={Lexmark.src} alt="Logo Lexmark" class="logo-customer">
+            </a>
+            <a href="" style="top: 43%; left: 14%;">
+                <img src={Samsung.src} alt="Logo Samsung" class="logo-customer">
+            </a>
+            <a href="" style="top: 60%; left: 33%;">
+                <img src={HP.src} alt="Logo HP" class="logo-customer">
+            </a>
+            <a href="" style="top: 51.7%; left: 23%;">
+                <img src={GroupeDFM.src} alt="Logo Groupe DFM" class="logo-customer">
+            </a>
+            <a href="" style="top: 15%; left: 55%;">
+                <img src={NGI.src} alt="Logo NGI" class="logo-customer">
+            </a>
+            <a href="" style="top: 62%; left: 18%;">
+                <img src={OKI.src} alt="Logo OKI" class="logo-customer">
+            </a>
+        </div>
+    </Section>
 </SectionsContainer>
-<Carousel>
-    <CarouselItem title="Ricoh">
-        <div class="logo-container">
-            <img src={Ricoh.src} alt="Logo Ricoh">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Xerox">
-        <div class="logo-container">
-            <img src={Xerox.src} alt="Logo Xerox">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Kyocera">
-        <div class="logo-container">
-            <img src={Kyocera.src} alt="Logo Kyocera">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Factoria Groupe">
-        <div class="logo-container">
-            <img src={Factoria.src} alt="Logo">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Document Store">
-        <div class="logo-container">
-            <img src={DocumentStore.src} alt="Logo Document Store">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Canon">
-        <div class="logo-container">
-            <img src={Canon.src} alt="Logo Canon">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Lexmark">
-        <div class="logo-container">
-            <img src={Lexmark.src} alt="Logo Lexmark">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Samsung">
-        <div class="logo-container">
-            <img src={Samsung.src} alt="Logo Samsung">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="HP">
-        <div class="logo-container">
-            <img src={HP.src} alt="Logo HP">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="Groupe DFM">
-        <div class="logo-container">
-            <img src={GroupeDFM.src} alt="Logo Groupe DFM">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="NGI">
-        <div class="logo-container">
-            <img src={NGI.src} alt="Logo NGI">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="OKI">
-        <div class="logo-container">
-            <img src={OKI.src} alt="Logo OKI">
-        </div>
-    </CarouselItem>
-    <CarouselItem title="SCC">
-        <div class="logo-container">
-            <img src={SCC.src} alt="Logo SCC">
-        </div>
-    </CarouselItem>
-</Carousel>
 
 <style>
-    .logo-container {
-        display: flex;
-        align-items: center;
-        height: 200px;
+    .customers-container {
+        width: 50%;
+        height: auto;
+        position: relative;
     }
 
-    img {
+    .tree {
+        position: relative;
+        background-color: var(--text-color);
         width: 100%;
-        max-height: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    a {
+        position: absolute;
+        width: 12%;
+        height: auto;
+        translate: -50% -50%;
+    }
+
+    .logo-customer {
+        border-width: 2px;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        transition: transform .2s;
+    }
+    .logo-customer:hover {
+        transform: scale(1.2);
     }
 </style>
