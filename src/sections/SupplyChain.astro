@@ -52,7 +52,7 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
         </a>
         <div class="service-text" style="top: 70%; left: 83%;">Traitement reverse</div>
     </div>
-    <Button redirect="/ACE/contact">Parlez-nous de vos besoins</Button>
+    <Button redirect="/ACE/contact" id="supply-chain-contact">Parlez-nous de vos besoins</Button>
 </Section>
 
 <style>
@@ -100,6 +100,10 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
 		height: auto;
 		max-height: none;
 		margin: 0;
-		background-color: var(--button-color);
+		background-color: var(--text-color);
+	}
+
+	:global(#supply-chain-contact) {
+		background-color: var(--title-color);
 	}
 </style>

@@ -23,7 +23,7 @@ import Text from "../components/Text.astro";
 
 <style>
     textarea {
-        background-color: var(--main-color);
+        background-color: var(--text-color);
         width: 85%;
         margin-bottom: 20px;
         resize: none;
@@ -38,11 +38,11 @@ import Text from "../components/Text.astro";
     }
 
     @keyframes blink-bg {
-        0%   { background-color: var(--main-color); }
+        0%   { background-color: var(--text-color); }
         20%  { background-color: var(--error-color); }
-        40%  { background-color: var(--main-color); }
+        40%  { background-color: var(--text-color); }
         60%  { background-color: var(--error-color); }
-        80%  { background-color: var(--main-color); }
+        80%  { background-color: var(--text-color); }
         100% { background-color: var(--error-color); }
     }
     

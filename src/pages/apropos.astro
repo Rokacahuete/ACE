@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import SectionsContainer from "../components/SectionsContainer.astro";
 import Text from "../components/Text.astro";
+import Carousel from "../components/Carousel.astro";
+import CarouselItem from "../components/CarouselItem.astro";
 
 import ADS from "../assets/ADS.jpg";
 import AS from "../assets/AS.jpg";
@@ -11,9 +13,6 @@ import LP from "../assets/LP.jpg";
 import PC from "../assets/PC.jpg";
 import RS from "../assets/RS.jpg";
 import SDS from "../assets/SDS.jpg";
-import Carousel from "../components/Carousel.astro";
-import CarouselItem from "../components/CarouselItem.astro";
-// import FP from "../assets/FP.jpg";
 ---
 
 <Layout>
@@ -120,10 +119,6 @@ import CarouselItem from "../components/CarouselItem.astro";
         </Section>
     </SectionsContainer>
     <SectionsContainer>
-        <Section title="Frederic PERDRIGER">
-            <!-- <img src={FP.src}> -->
-            <Text centered>Responsable Logistique</Text>
-        </Section>
         <Section title="Rabi SOUGUIR">
             <img src={RS.src}>
             <Text centered>Responsable Technique</Text>
