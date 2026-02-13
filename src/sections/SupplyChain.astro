@@ -4,6 +4,7 @@ import Button from "../components/Button.astro";
 
 import Background from '../assets/supply-chain/background.png';
 import LogoLogistique from "../assets/supply-chain/logo-logistique.png";
+import LogoAssemblage from "../assets/supply-chain/logo-assemblage.png";
 import LogoParametrage from "../assets/supply-chain/logo-paramétrage.png";
 import LogoLivraison from "../assets/supply-chain/logo-livraison.png";
 import LogoInstallation from "../assets/supply-chain/logo-installation.png";
@@ -21,10 +22,10 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
         </a>
         <div class="service-text" style="top: 15.5%; left: 21%;">Logistique</div>
 
-        <a href="/ACE/services/assemblage" class="service-button" style="top: 49.2%; left: 30.8%;">
-            <!-- <img src={Background.src} alt="" class="service-logo"> -->
+        <a href="/ACE/services/assemblage" class="service-button" style="top: 55%; left: 30.3%;">
+            <img src={LogoAssemblage.src} alt="" class="service-logo">
         </a>
-        <div class="service-text" style="top: 56.7%; left: 30.8%;">Assemblage</div>
+        <div class="service-text" style="top: 68%; left: 30.3%;">Assemblage</div>
 
         <a href="/ACE/services/paramétrage" class="service-button" style="top: 22%; left: 39.5%;">
             <img src={LogoParametrage.src} alt="" class="service-logo">
@@ -51,7 +52,7 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
         </a>
         <div class="service-text" style="top: 70%; left: 83%;">Traitement reverse</div>
     </div>
-    <Button redirect="/ACE/contact">Vous souhaitez un devis ? Contactez-nous !</Button>
+    <Button redirect="/ACE/contact">Parlez-nous de vos besoins</Button>
 </Section>
 
 <style>
