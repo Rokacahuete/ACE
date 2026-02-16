@@ -43,6 +43,10 @@ import Button from "../../components/Button.astro";
     .buttons-container {
         display: flex;
         gap: 100px;
-        margin-bottom: 10px;
+        margin-block: 10px;
+    }
+
+    :global(.buttons-container>.button) {
+        width: 200px;
     }
 </style>

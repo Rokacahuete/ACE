@@ -7,7 +7,7 @@ import Text from "../components/Text.astro";
 ---
 
 <SectionsContainer>
-    <Section title="ACE en quelques chiffres">
+    <Section title="ACE en quelques chiffres" id="datas">
         <Text>
             <table>
                 <tr>
@@ -20,7 +20,11 @@ import Text from "../components/Text.astro";
                 </tr>
                 <tr>
                     <td>150</td>
-                    <td>salariés (dont 100% de CDI)</td>
+                    <td>salariés</td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>CDI</td>
                 </tr>
                 <tr>
                     <td>3,4j</td>
@@ -40,6 +44,8 @@ import Text from "../components/Text.astro";
                 </tr>
             </table>
         </Text>
+        <!-- <Text centered>Liste de nos agences :</Text>
+        <Text>Arras, Sotteville les Rouen, Rennes, Cholet, Bruges, Montauban, Rousset, Mions, Gannat, Dijon, Woippy, Champlan, Les Ulis</Text> -->
     </Section>
     <div class="map-container">
         <img src={Map.src} class="map" alt="Carte des agences">
@@ -47,6 +53,10 @@ import Text from "../components/Text.astro";
 </SectionsContainer>
 
 <style>
+    :global(#datas .text) {
+		margin-top: 0;
+    }
+
     .map-container {
         position: relative;
         max-width: 50%;
@@ -55,5 +65,15 @@ import Text from "../components/Text.astro";
     .map {
         width: 100%;
         height: auto;
+    }
+    
+    tr>td:first-child {
+		font-family: "Super Dream", sans-serif;
+        padding-right: 20px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    tr>td {
     }
 </style>

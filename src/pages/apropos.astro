@@ -13,6 +13,7 @@ import LP from "../assets/LP.jpg";
 import PC from "../assets/PC.jpg";
 import RS from "../assets/RS.jpg";
 import SDS from "../assets/SDS.jpg";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
@@ -129,10 +130,18 @@ import SDS from "../assets/SDS.jpg";
         </Section>
     </SectionsContainer>
     <SectionsContainer>
-        <Section>
-            <Text centered>
-                <a href="/ACE/contact" type="button" style="width: 100%; height: 100%; text-align: center;">Nous contacter</a>
-            </Text>
+        <Section class="apropos-contact-section">
+            <Button redirect="/ACE/contact" id="apropos-contact-button">Nous contacter</Button>
         </Section>
     </SectionsContainer>
 </Layout>
+
+<style>
+    :global(.apropos-contact-section) {
+        padding-block: 20px;
+    }
+
+    :global(#apropos-contact-button) {
+        width: 100%;
+    }
+</style>

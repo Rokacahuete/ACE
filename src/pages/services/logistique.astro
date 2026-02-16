@@ -29,6 +29,11 @@ import Layout from "../../layouts/Layout.astro";
 <style>
     .buttons-container {
         display: flex;
-        margin-bottom: 10px;
+        gap: 100px;
+        margin-block: 10px;
+    }
+
+    :global(.buttons-container>.button) {
+        width: 200px;
     }
 </style>

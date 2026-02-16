@@ -1,8 +1,8 @@
 ---
-const { title, class: classname } = Astro.props;
+const { title, class: classname, id } = Astro.props;
 ---
 
-<div class=`section-container glass centered ${classname ?? ""}`>
+<div class=`section-container glass centered ${classname ?? ""}` id={id ?? ""}>
 	{ title ? <h1>{title}</h1> : "" }
 	<slot />
 </div>
@@ -19,6 +19,7 @@ const { title, class: classname } = Astro.props;
 	}
 
 	h1 {
+		font-family: "Super Dream", sans-serif;
 		background-color: var(--title-color);
 		border: 5px solid var(--border-color);
 		border-radius: 10px;
