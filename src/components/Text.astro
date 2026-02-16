@@ -2,9 +2,9 @@
 const { centered } = Astro.props;
 ---
 
-<p class=`text ${centered ? "centered" : ""}`>
+<div class=`text ${centered ? "centered" : ""}`>
     <slot></slot>
-</p>
+</div>
 
 <style>
     .text {

@@ -1,0 +1,59 @@
+---
+import Section from "../components/Section.astro";
+import SectionsContainer from "../components/SectionsContainer.astro";
+
+import Map from "../assets/map.png";
+import Text from "../components/Text.astro";
+---
+
+<SectionsContainer>
+    <Section title="ACE en quelques chiffres">
+        <Text>
+            <table>
+                <tr>
+                    <td>13</td>
+                    <td>agences</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>mouvements par jour</td>
+                </tr>
+                <tr>
+                    <td>150</td>
+                    <td>salariés (dont 100% de CDI)</td>
+                </tr>
+                <tr>
+                    <td>3,4j</td>
+                    <td>de délai en moyenne</td>
+                </tr>
+                <tr>
+                    <td>25 000m²</td>
+                    <td>de stockage</td>
+                </tr>
+                <tr>
+                    <td>13 000 000€</td>
+                    <td>de CA</td>
+                </tr>
+                <tr>
+                    <td>40 ans</td>
+                    <td>d'existance</td>
+                </tr>
+            </table>
+        </Text>
+    </Section>
+    <div class="map-container">
+        <img src={Map.src} class="map" alt="Carte des agences">
+    </div>
+</SectionsContainer>
+
+<style>
+    .map-container {
+        position: relative;
+        max-width: 50%;
+    }
+
+    .map {
+        width: 100%;
+        height: auto;
+    }
+</style>
