@@ -7,6 +7,9 @@ import Text from "../components/Text.astro";
 ---
 
 <SectionsContainer>
+    <div class="map-container">
+        <img src={Map.src} class="map" alt="Carte des agences">
+    </div>
     <Section title="ACE en quelques chiffres" id="datas">
         <Text>
             <table>
@@ -47,9 +50,6 @@ import Text from "../components/Text.astro";
         <!-- <Text centered>Liste de nos agences :</Text>
         <Text>Arras, Sotteville les Rouen, Rennes, Cholet, Bruges, Montauban, Rousset, Mions, Gannat, Dijon, Woippy, Champlan, Les Ulis</Text> -->
     </Section>
-    <div class="map-container">
-        <img src={Map.src} class="map" alt="Carte des agences">
-    </div>
 </SectionsContainer>
 
 <style>

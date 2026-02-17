@@ -2,7 +2,7 @@
 const { title } = Astro.props;
 ---
 
-<article class="item glass">
+<article class="item glass centered">
 	{ title ? <h1>{title}</h1> : "" }
 	<slot />
 </article>
@@ -15,7 +15,7 @@ const { title } = Astro.props;
 		border-radius: 10px;
 		padding: 5px 0px;
 		margin-top: 0;
-		width: 90%;
+		width: 100%;
 	}
 
     .item {

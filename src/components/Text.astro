@@ -1,8 +1,8 @@
 ---
-const { centered } = Astro.props;
+const { centered, class:classList } = Astro.props;
 ---
 
-<div class=`text ${centered ? "centered" : ""}`>
+<div class=`text ${centered ? "centered" : ""} ${classList ?? ""}`>
     <slot></slot>
 </div>
 

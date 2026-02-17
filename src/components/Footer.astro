@@ -36,7 +36,13 @@ import Text from "./Text.astro"
     }
 
     .contact a {
+		font-family: "Super Dream", sans-serif;
         flex: 1 1 300px;
+
+        transition: transform .3s;
+    }
+    .contact a:hover {
+        transform: scale(1.1);
     }
 
     :global(.contact .text) {
