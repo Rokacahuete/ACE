@@ -18,41 +18,40 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
         <img src={Background.src} alt="" class="supply-chain">
 
         <a href="/ACE/services/logistique" class="service-button" style="top: 18.5%; left: 21%;" role="button">
-            <img src={LogoLogistique.src} alt="" class="service-logo">
+            <img src={LogoLogistique.src} alt="Logo logistique" class="service-logo" data-hover="service-text-logistique">
         </a>
-        <div class="service-text" style="top: 15.5%; left: 21%;">Logistique</div>
+        <div class="service-text" style="top: 15.5%; left: 21%;" id="service-text-logistique">Logistique</div>
 
         <a href="/ACE/services/assemblage" class="service-button" style="top: 55%; left: 30.3%;" role="button">
-            <img src={LogoAssemblage.src} alt="" class="service-logo">
+            <img src={LogoAssemblage.src} alt="Logo assemblage" class="service-logo" data-hover="service-text-assemblage">
         </a>
-        <div class="service-text" style="top: 68%; left: 30.3%;">Assemblage</div>
+        <div class="service-text" style="top: 68%; left: 30.3%;" id="service-text-assemblage">Assemblage</div>
 
-        <a href="/ACE/services/paramétrage" class="service-button" style="top: 22%; left: 39.5%;" role="button">
-            <img src={LogoParametrage.src} alt="" class="service-logo">
+        <a href="/ACE/services/paramétrage" class="service-button" style="top: 55%; left: 37.3%;" role="button">
+            <img src={LogoParametrage.src} alt="Logo paramétrage" class="service-logo" data-hover="service-text-parametrage">
         </a>
-        <div class="service-text" style="top: 17%; left: 46%;">Paramétrage</div>
+        <div class="service-text" style="top: 68%; left: 38%;" id="service-text-parametrage">Paramétrage</div>
 
         <a href="/ACE/services/livraison" class="service-button" style="top: 52%; left: 51%;" role="button">
-            <img src={LogoLivraison.src} alt="" class="service-logo">
+            <img src={LogoLivraison.src} alt="Logo livraison" class="service-logo" data-hover="service-text-livraison">
         </a>
-        <div class="service-text" style="top: 65%; left: 51%;">Livraison</div>
+        <div class="service-text" style="top: 65%; left: 51%;" id="service-text-livraison">Livraison</div>
 
         <a href="/ACE/services/locker" class="service-button" style="top: 14%; left: 71%;" role="button">
-            <img src={LogoLocker.src} alt="" class="service-logo">
+            <img src={LogoLocker.src} alt="Logo locker" class="service-logo" data-hover="service-text-locker">
         </a>
-        <div class="service-text" style="top: 11%; left: 71%;">Locker</div>
+        <div class="service-text" style="top: 11%; left: 71%;" id="service-text-locker">Locker</div>
 
         <a href="/ACE/services/installation" class="service-button" style="top: 35%; left: 84.4%;" role="button">
-            <img src={LogoInstallation.src} alt="" class="service-logo">
+            <img src={LogoInstallation.src} alt="Logo installation" class="service-logo" data-hover="service-text-installation">
         </a>
-        <div class="service-text" style="top: 28%; left: 84.8%;">Installation</div>
+        <div class="service-text" style="top: 28%; left: 84.8%;" id="service-text-installation">Installation</div>
 
         <a href="/ACE/services/traitement-reverse" class="service-button" style="top: 73%; left: 78%;" role="button">
-            <img src={LogoTraitementReverse.src} alt="" class="service-logo">
+            <img src={LogoTraitementReverse.src} alt="Logo traitement reverse" class="service-logo" data-hover="service-text-reverse">
         </a>
-        <div class="service-text" style="top: 70%; left: 83%;">Traitement reverse</div>
+        <div class="service-text" style="top: 70%; left: 83%;" id="service-text-reverse">Traitement reverse</div>
     </div>
-    <Button redirect="/ACE/contact" id="supply-chain-contact">Parlez-nous de vos besoins</Button>
 </Section>
 
 <style>
@@ -82,13 +81,16 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
 	}
 
 	.service-text {
+		opacity: 0;
 		position: absolute;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
-		background-color: var(--title-color);
+		background-color: rgb(151, 151, 151);
 		padding: 2px 20px;
 		border: 2px solid var(--border-color);
 		border-radius: 10px;
+
+		transition: opacity 0.3s;
 	}
 
 	@media (max-width: 1048px) {
@@ -109,3 +111,10 @@ import LogoBorne from "../assets/supply-chain/logo-borne.png";
 		background-color: var(--title-color);
 	}
 </style>
+
+<script>
+	document.querySelectorAll<HTMLElement>(".service-logo").forEach(logo => {
+		logo.addEventListener("mouseenter", () => document.getElementById(logo.dataset.hover ?? "")?.style.setProperty("opacity", "1"));
+		logo.addEventListener("mouseleave", () => document.getElementById(logo.dataset.hover ?? "")?.style.setProperty("opacity", "0"));
+	});
+</script>

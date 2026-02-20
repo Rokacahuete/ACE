@@ -16,7 +16,7 @@ import Text from "../components/Text.astro";
             <textarea name="Sujet" placeholder="Précisez le sujet de votre demande" rows="1" maxlength="128" required id="subject"></textarea>
             <Text>Entrez votre message</Text>
             <textarea name="Contenu" placeholder="Écrivez ici votre message" rows="16" maxlength="1024" required id="content"></textarea>
-            <button class="submit" id="submit-button" type="button">Envoyer</button>
+            <button class="submit" id="submit-button" type="button"><b>Envoyer</b></button>
         </Section>
     </SectionsContainer>
 </Layout>
@@ -47,7 +47,6 @@ import Text from "../components/Text.astro";
     }
     
     .submit {
-		font-family: "Super Dream", sans-serif;
         display: inline-flex;
         width: 90%;
         height: 60px;

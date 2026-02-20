@@ -1,15 +1,17 @@
 ---
-import Img1 from '../assets/3125.jpg';
-import Img2 from '../assets/IMG_5113.jpg';
+import Img1 from '../assets/banners/1.jpg';
+import Img2 from '../assets/banners/2.jpg';
+import Img3 from '../assets/banners/3.jpg';
 ---
 
 <div class="banner-container">
     <div class="track" id="track">
         <img class = "banner" data-images={[
             Img1.src,
-            Img2.src
+            Img2.src,
+            Img3.src
         ].join(',')}
-        data-positions={["center 69%", "center 50%"].join(',')} src={Img1.src} id="banner" alt="">
+        data-positions={["center 75%", "center 50%", "center 53%"].join(',')} src={Img1.src} id="banner" alt="">
         <img class = "next" src={Img2.src} id="next" alt="">
     </div>
 </div>
@@ -45,7 +47,7 @@ import Img2 from '../assets/IMG_5113.jpg';
 		width: 50%;
         height: 100%;
 		object-fit: cover;
-		object-position: center 69%;
+		object-position: center 75%;
 	}
 </style>
 

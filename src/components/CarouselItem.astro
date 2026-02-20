@@ -3,13 +3,12 @@ const { title } = Astro.props;
 ---
 
 <article class="item glass centered">
-	{ title ? <h1>{title}</h1> : "" }
+	{ title ? <h1><b>{title}</b></h1> : "" }
 	<slot />
 </article>
 
 <style>
 	h1 {
-		font-family: "Super Dream", sans-serif;
 		background-color: var(--title-color);
 		border: 5px solid var(--border-color);
 		border-radius: 10px;

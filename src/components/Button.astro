@@ -3,12 +3,11 @@ const { redirect, target, id } = Astro.props;
 ---
 
 <a href={redirect} class="button" target=`${target ? "_blank" : ""}` role="button" id={id ?? ""}>
-    <slot></slot>
+    <b><slot></slot></b>
 </a>
 
 <style>
     .button {
-		font-family: "Super Dream", sans-serif;
         display: inline-flex;
         width: 120px;
         height: 60px;

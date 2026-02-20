@@ -1,4 +1,8 @@
-<div class="sections-container">
+---
+const { size } = Astro.props;
+---
+
+<div class="sections-container" style=`max-width: ${size ?? "1199px"};`>
     <slot/>
 </div>
 

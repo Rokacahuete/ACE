@@ -1,7 +1,46 @@
 ---
+import Button from "../../components/Button.astro";
+import Section from "../../components/Section.astro";
+import SectionsContainer from "../../components/SectionsContainer.astro";
+import Text from "../../components/Text.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
+
 <Layout>
-    
+    <SectionsContainer>
+        <Section title="Locker">
+            <Text>
+                <b>1er</b> : <b>Conception</b> de l'installation<br>
+                Nous participons aux <b>visites</b> de site entérinant les <b>contraintes</b> et conditions d'<b>installation</b><br><br>
+
+                <b>2nd</b> : <b>Gestion</b> Logistique et Préparation<br>
+                Entrées - Sorties - <b>Suivi</b> et Gestion de <b>stock</b> informatisée facilité par la conception de <b>configuration</b> automatisée<br><br>
+
+                <b>3ème</b> : Respect des éléments <b>sécuritaires</b> d'installation <br>
+                Réalisation <b>Visite ICP</b> - Signature </b>Plan de Prévention</b> - Réalisation des <b>habilitations</b><br><br>
+
+                <b>4ème</b> : Installation<br>
+                Installation selon <b>Cahier des charges</b> - <b>Fixation</b> au Sol - <b>Manutention</b> Spécifique<br><br>
+
+                <b>5ème</b> : Recettage<br>
+                <b>Finalisation</b> Technique - <b>Recettage</b> de Fonctionnement - Prise de <b>Photographies</b>
+            </Text>
+            <div class="buttons-container">
+                <Button redirect="/ACE/services/traitement-reverse">‹ Traitement Reverse</Button>
+            </div>
+        </Section>
+    </SectionsContainer>
 </Layout>
+
+<style>
+    .buttons-container {
+        display: flex;
+        gap: 100px;
+        margin-block: 10px;
+    }
+
+    :global(.buttons-container>.button) {
+        width: 200px;
+    }
+</style>

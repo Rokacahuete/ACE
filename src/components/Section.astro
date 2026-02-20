@@ -1,9 +1,9 @@
 ---
-const { title, class: classname, id } = Astro.props;
+const { title, redirect, class: classname, id } = Astro.props;
 ---
 
-<div class=`section-container glass centered ${classname ?? ""}` id={id ?? ""}>
-	{ title ? <h1>{title}</h1> : "" }
+<div class=`section-container glass centered ${classname ?? ""}` data-redirect={redirect ?? ""} id={id ?? ""}>
+	{ title ? <h1><b>{title}</b></h1> : "" }
 	<slot />
 </div>
 
@@ -19,7 +19,6 @@ const { title, class: classname, id } = Astro.props;
 	}
 
 	h1 {
-		font-family: "Super Dream", sans-serif;
 		background-color: var(--title-color);
 		border: 5px solid var(--border-color);
 		border-radius: 10px;
@@ -44,3 +43,11 @@ const { title, class: classname, id } = Astro.props;
 		margin-bottom: 20px;
 	}
 </style>
+
+<script>
+	document.querySelectorAll<HTMLElement>(".section-container").forEach(section => {
+		section.addEventListener("mousedown", () => {
+			if (section.dataset.redirect) document.location.href = section.dataset.redirect;
+		});
+	});
+</script>

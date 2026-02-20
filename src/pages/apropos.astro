@@ -5,27 +5,33 @@ import SectionsContainer from "../components/SectionsContainer.astro";
 import Text from "../components/Text.astro";
 import Carousel from "../components/Carousel.astro";
 import CarouselItem from "../components/CarouselItem.astro";
+import CustomersSection from '../sections/Customers.astro';
 
-import ADS from "../assets/ADS.jpg";
-import AS from "../assets/AS.jpg";
-import CL from "../assets/CL.jpg";
-import LP from "../assets/LP.jpg";
-import PC from "../assets/PC.jpg";
-import RS from "../assets/RS.jpg";
-import SDS from "../assets/SDS.jpg";
+import ADS from "../assets/direction/ADS.jpg";
+import AS from "../assets/direction/AS.jpg";
+import CL from "../assets/direction/CL.jpg";
+import LP from "../assets/direction/LP.jpg";
+import PC from "../assets/direction/PC.jpg";
+import RS from "../assets/direction/RS.jpg";
+import SDS from "../assets/direction/SDS.jpg";
 import Button from "../components/Button.astro";
 ---
 
 <Layout>
     <SectionsContainer>
-        <Section title="ACE">
+        <Section title="Notre histoire"></Section>
+    </SectionsContainer>
+    <SectionsContainer>
+        <Section>
             <Text>
-                Fondée en 1988, <b>ACE - Antony Courses Express</b> s'est développée à Champlan (Essonne) autour d'un objectif clair : proposer des solutions de transport et de logistique à échelle <b>nationnale</b>, <b>fiables</b> et <b>maîtrisées</b>. Depuis sa création, l'entreprise a évolué de manière continue, en adaptant ses <b>méthodes</b> et ses <b>outils</b> aux besoins de ses clients, tout en conservant une organisation à <b>taille humaine</b>.
+                Nous sommes une entreprise <b>française</b> de <b>transport</b> routier, fondée en <b>1984</b> et basée en Ile de France. Nous exerçons des activités de <b>transport</b>, <b>manutention</b>, <b>livraison</b> et <b>installation</b> de matériels <b>bureautique</b>, notamment dans des contextes nécessitant <b>précision</b> et <b>fiabilité</b>.<br><br>
+
+                Nous disposons d'infrastructures logistiques nous permettant d'assurer l'<b>entreposage</b>, la <b>préparation</b>, et la <b>livraison</b> des équipements. Notre activité s'adresse essentiellement à une clientèle <b>professionnelle</b>, avec des prestations couvrant l'<b>ensemble</b> de la <b>chaîne logistique courte</b>, du stockage jusqu'à l'installation finale.
             </Text>
         </Section>
     </SectionsContainer>
     <Carousel>
-        <CarouselItem title="1988">
+        <CarouselItem title="1984">
             <Text centered class="sous-titre">Création de la société</Text>
             <Text>
                 Initialement basée sur le <b>transport express</b>, ACE contracte avec de nombreuses sociétés du marché <b>Bureautique</b>. Mr DOS SANTOS Antonio est alors gérant et créateur de la société.
@@ -95,52 +101,41 @@ import Button from "../components/Button.astro";
     <SectionsContainer>
         <Section title="Notre équipe"></Section>
     </SectionsContainer>
-    <SectionsContainer>
+    <SectionsContainer size="999px">
         <Section title="Antonio DOS SANTOS">
             <img src={ADS.src}>
-            <Text centered class="sous-titre">Président</Text>
-            <Text></Text>
+            <Text centered class="sous-titre"><b>Président</b></Text>
         </Section>
         <Section title="Ludovic PLAYOUT">
             <img src={LP.src}>
-            <Text centered class="sous-titre">Directeur Supply Chain</Text>
-            <Text></Text>
+            <Text centered class="sous-titre"><b>Directeur Supply Chain</b></Text>
         </Section>
     </SectionsContainer>
-    <SectionsContainer>
+    <SectionsContainer size="999px">
         <Section title="Sandra DOS SANTOS">
-            <img src={SDS.src}>
-            <Text centered class="sous-titre">Responsable Administrative</Text>
-            <Text></Text>
+            <img src={SDS.src} style="max-height: 250px;">
+            <Text centered class="sous-titre"><b>Responsable Administrative</b></Text>
         </Section>
         <Section title="Carlos LOUREIRO">
-            <img src={CL.src}>
-            <Text centered class="sous-titre">Responsable Opérationnnel</Text>
-            <Text></Text>
+            <img src={CL.src} style="max-height: 250px;">
+            <Text centered class="sous-titre"><b>Responsable Opérationnnel</b></Text>
         </Section>
         <Section title="Adrien SIMOES">
-            <img src={AS.src}>
-            <Text centered class="sous-titre">Responsable Exploitation IDF</Text>
-            <Text></Text>
+            <img src={AS.src} style="max-height: 250px;">
+            <Text centered class="sous-titre"><b>Responsable Exploitation IDF</b></Text>
         </Section>
     </SectionsContainer>
-    <SectionsContainer>
+    <SectionsContainer size="999px">
         <Section title="Rabi SOUGUIR">
-            <img src={RS.src}>
+            <img src={RS.src} style="max-height: 250px;">
             <Text centered class="sous-titre">Responsable Technique</Text>
-            <Text></Text>
         </Section>
         <Section title="Patrice CAPDEVILLA">
-            <img src={PC.src}>
+            <img src={PC.src} style="max-height: 250px;">
             <Text centered class="sous-titre">Responsable Réseau</Text>
-            <Text></Text>
         </Section>
     </SectionsContainer>
-    <SectionsContainer>
-        <Section class="apropos-contact-section">
-            <Button redirect="/ACE/contact" id="apropos-contact-button">Nous contacter</Button>
-        </Section>
-    </SectionsContainer>
+	<CustomersSection />
 </Layout>
 
 <style>
@@ -153,7 +148,6 @@ import Button from "../components/Button.astro";
     }
 
     :global(.sous-titre) {
-		font-family: "Super Dream", sans-serif;
         margin-bottom: 10px;
     }
 </style>
